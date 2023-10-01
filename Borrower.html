@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function confirmPayment() {
+            // Get loan amount and purpose from the form
+            var loanAmount = parseFloat(document.getElementById("loanAmount").value);
+            var loanPurpose = document.getElementById("loanPurpose").value;
+
+            // Check if loanAmount is a valid number
+            if (!isNaN(loanAmount)) {
+                // Display a confirmation message with the approved loan amount
+                alert("Loan request approved. Approved amount: $" + loanAmount.toFixed(2));
+            } else {
+                alert("Please enter a valid loan amount.");
+            }
+        }
+    </script>
+</head>
+<body style="background-color: lightpink;">
+    <h1>Borrower Dashboard</h1>
+
+    <!-- Loan Request Form -->
+    <h2>Request a Loan</h2>
+    <form id="loanRequestForm">
+        <label for="loanAmount">Loan Amount</label>
+        <input type="number" id="loanAmount" name="loanAmount" required>
+        <br>
+
+        <label for="loanPurpose">Loan Purpose:</label>
+        <input type="text" id="loanPurpose" name="loanPurpose" required>
+        <br><br>
+
+        <button type="button" onclick="confirmPayment();">Submit Loan Request</button>
+    </form>
+</body>
+</html>
